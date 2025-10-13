@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin Mehrabani - Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        header .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            color: #555;
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .interest-item {
+            background: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #2c3e50;
+        }
+        
+        .publication {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .publication:last-child {
+            border-bottom: none;
+        }
+        
+        .pub-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .publication h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .pub-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .badge {
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .badge-accepted {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .badge-review {
+            background: #e67e22;
+            color: white;
+        }
+        
+        .badge-progress {
+            background: #3498db;
+            color: white;
+        }
+        
+        .badge-if {
+            background: #9b59b6;
+            color: white;
+        }
+        
+        .badge-grant {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .pub-details {
+            color: #555;
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .download-cv {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Artin Mehrabani</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#cv">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Artin Mehrabani</h1>
+        <p class="subtitle">Computational Genomics Researcher</p>
+        <p>B.Sc. in Biotechnology, University of Tehran</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:artin.mehrabani2004@gmail.com">artin.mehrabani2004@gmail.com</a></p>
+            <p>Phone: +98 910 263 3655</p>
+            <p>ORCID: <a href="https://orcid.org/0009-0002-3535-6026" target="_blank">0009-0002-3535-6026</a></p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Research Interests</h2>
+            <div class="research-interests">
+                <div class="interest-item">Computational Genomics & AI in Diagnostics</div>
+                <div class="interest-item">Non-Invasive Prenatal Diagnostics and Therapy</div>
+                <div class="interest-item">Predictive Health and Personalized Medicine</div>
+                <div class="interest-item">Translational Biotechnology</div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <h3>Identifying Differentially Methylated Sites for Methylation-Sensitive qPCR-Based NIPT of Trisomies 13 and 18</h3>
+                
+                <img src="https://placeholder.com/publication1-preview.jpg" alt="Publication 1" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Preview of published article (Image 1 & 2 from your upload)</p>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-accepted">Published</span>
+                    <span class="badge badge-if">IF: 1.0</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Journal:</strong> Journal of Advanced Biomedical Research (2025)</p>
+                    <p><strong>Authors:</strong> Ali Najafi, Erfaneh Dastbaz, <strong>Artin Mehrabani</strong>, Morteza Rajabi, Ghazal Sedaghat Shayegan, Mohammad Mirvounesi, Mohammad Hossein Modarressi</p>
+                    <p><strong>My Contribution:</strong> Data Curation (equal), Investigation (supporting), Writing – Review & Editing (supporting)</p>
+                    <p><strong>Abstract:</strong> This study investigates methylation-sensitive quantitative PCR (MS-qPCR) as a cost-effective alternative to NGS-based NIPT for detecting trisomies 13 and 18. Twenty-two differentially methylated sites were successfully validated with high specificity and reproducibility.</p>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <h3>Association Between First Trimester of Pregnancy Medication Use and Fetal DNA Fraction in Maternal Plasma</h3>
+                
+                <img src="https://placeholder.com/publication2-preview.jpg" alt="Publication 2" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Manuscript preview (Image 3 & 4 from your upload)</p>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-review">Under Review</span>
+                    <span class="badge badge-if">IF: 6.3</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Journal:</strong> Journal of Ultrasound in Obstetrics and Gynecology (Expected Jul 2025)</p>
+                    <p><strong>Authors:</strong> <strong>Artin Mehrabani</strong>, Ali Najafi, Sarang Younesi, Mehran Habibi-Rezaei, Mohammad Hossein Modarressi</p>
+                    <p><strong>My Contribution:</strong> Investigation (lead), Conceptualization (equal), Data Curation (equal), Writing – Original Draft (equal)</p>
+                    <p><strong>Abstract:</strong> Analyzed data from 43,722 pregnant women to determine the effect of first trimester medications on fetal fraction rates. Results show marked decreases in fetal fraction with drugs such as aspirin, enoxaparin, and levothyroxine, demonstrating strong associations between pharmacological exposure and fetal fractions.</p>
+                    <p><strong>Data Source:</strong> Genome-Nilou Laboratory, Tehran, Iran</p>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <h3>Personalizing NIPT Scheduling through Fetal Fraction Prediction: An Interpretable Machine Learning Approach</h3>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-progress">In Progress</span>
+                    <span class="badge badge-grant">Grant Funded</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Supervisor:</strong> Assoc. Prof. Kaveh Kavousi, Department of Bioinformatics, University of Tehran</p>
+                    <p><strong>My Contribution:</strong> Investigation (lead), Data Curation (lead), Conceptualization (equal), Writing – Original Draft (equal)</p>
+                    <p><strong>Research Focus:</strong> Developing machine learning models using Python (Pandas, Scikit-learn) to predict optimal NIPT scheduling based on maternal clinical variables and fetal fraction dynamics.</p>
+                    <p><strong>Funding:</strong> Awarded "Product-Oriented Artificial Intelligence Projects" Research Grant by Tehran University of Medical Sciences</p>
+                    <p><strong>Data Sources:</strong> Genome-Nilou and Pars Genome Laboratories</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Research Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Research Assistant - Modarressi Lab, TUMS</h3>
+                <p class="experience-date">February 2024 - Present</p>
+                <p><strong>Project:</strong> Differential Methylation Signatures in Maternal-Fetal Cell-Free DNA: A Novel Epigenetic Framework for Non-Invasive Prenatal Screening of Trisomy 13 and 18</p>
+                <p><strong>Supervisor:</strong> Prof. Mohammad Hossein Modarressi</p>
+                <p>Contributing to laboratory procedures focusing on DNA extraction and epigenetic marker identification. Hands-on experience in molecular genetics techniques.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>R&D Intern - Gene Dorpham Pars Company</h3>
+                <p class="experience-date">March 2025 - Present</p>
+                <p>Optimization of cfDNA extraction kit protocols. Working on advanced medical products for diagnostics and therapeutics. Affiliated with Genome-Nilou laboratory.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Technology Assistant - University of Tehran Science & Technology Park</h3>
+                <p class="experience-date">July 2025 - Present</p>
+                <p><strong>Supervisor:</strong> Dr. Masoumeh Malek</p>
+                <p>Application of biotechnology knowledge in industry settings.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-section">
+                <div class="skill-category">
+                    <h3>Laboratory & Molecular Biology</h3>
+                    <ul class="skill-list">
+                        <li>PCR (Conventional & Real-Time)</li>
+                        <li>DNA Extraction</li>
+                        <li>Gel Electrophoresis</li>
+                        <li>NanoDrop Spectrophotometry</li>
+                        <li>Primer Design</li>
+                        <li>Methylation-Sensitive qPCR</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Computational & Bioinformatics</h3>
+                    <ul class="skill-list">
+                        <li>Python (Pandas, Scikit-learn)</li>
+                        <li>Machine Learning (Classical Models)</li>
+                        <li>Linux Command-Line</li>
+                        <li>NGS Data Analysis</li>
+                        <li>Sequence Alignment Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li>SPSS (Statistical Analysis)</li>
+                        <li>Microsoft Excel (Advanced)</li>
+                        <li>Data Visualization</li>
+                        <li>EndNote</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="download-cv">
+            <h2>Curriculum Vitae</h2>
+            <p style="margin-bottom: 20px;">Download my complete academic CV for detailed information about research, publications, and experience.</p>
+            <a href="#" class="btn">Download CV (PDF)</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Artin Mehrabani | Computational Genomics Researcher</p>
+        <p>University of Tehran, Tehran, Iran</p>
+    </footer>
+</body>
+</html>
+
