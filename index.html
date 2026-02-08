@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin Mehrabani - Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        header .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            color: #555;
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .interest-item {
+            background: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #2c3e50;
+        }
+        
+        .publication {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .publication:last-child {
+            border-bottom: none;
+        }
+        
+        .pub-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .publication h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .pub-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .badge {
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .badge-accepted {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .badge-review {
+            background: #e67e22;
+            color: white;
+        }
+        
+        .badge-progress {
+            background: #3498db;
+            color: white;
+        }
+        
+        .badge-grant {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .pub-details {
+            color: #555;
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .download-cv {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Artin Mehrabani</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#awards-and-honors">Awards and Honors</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#cv">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Artin Mehrabani</h1>
+        <p>B.Sc. in Biotechnology, University of Tehran</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:artin.mehrabani2004@gmail.com">artin.mehrabani2004@gmail.com</a></p>
+            <p>Phone: +98 910 263 3655</p>
+            <p>ORCID: <a href="https://orcid.org/0009-0002-3535-6026" target="_blank">0009-0002-3535-6026</a></p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a dedicated and forward-thinking undergraduate student with a strong foundation in genetics and a profound passion for leveraging computational genomics and artificial intelligence to revolutionize diagnostics and personalized medicine. My academic journey and research endeavors are focused on developing innovative, non-invasive methods for prenatal screening, aiming to make these critical technologies more accessible, accurate, and reliable. I am driven by the potential of translational research to bridge the gap between cutting-edge laboratory discoveries and real-world clinical applications, ultimately improving patient outcomes. My long-term vision is to contribute significantly to the field of predictive health, utilizing advanced data-driven approaches to shape a future where medical interventions are precisely tailored to individual biological profiles.</p>
+            
+            <h2 style="margin-top: 40px;">Research Interests</h2>
+            <div class="research-interests">
+                <div class="interest-item">Computational Genomics & AI in Diagnostics</div>
+                <div class="interest-item">Non-Invasive Prenatal Diagnostics and Therapy</div>
+                <div class="interest-item">Predictive Health and Personalized Medicine</div>
+                <div class="interest-item">Translational Biotechnology</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;">
+                <div style="text-align: center;">
+                    <img src="./images/lab_work_1.jpg" alt="Artin Mehrabani in the lab" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 10px;">Engaged in molecular biology experiments, demonstrating hands-on expertise in laboratory techniques.</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./images/lab_work_2.jpg" alt="Artin Mehrabani operating lab equipment" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 10px;">Operating advanced laboratory equipment for precise data acquisition and analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <h3>Identifying Differentially Methylated Sites for NIPT of Trisomies 13 and 18</h3>
+                
+                <img src="./images/publication1_title.jpg" alt="Publication 1 Title" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Title page of the accepted article outlining the research focus.</p>
+                <img src="./images/publication1_abstract.jpg" alt="Publication 1 Abstract" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Abstract section detailing the methodology and key findings of the study.</p>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-accepted">Accepted</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Journal:</strong> Journal of Advanced Biomedical Research (2025)</p>
+                    <p><strong>Abstract:</strong> This study presents a significant advancement in non-invasive prenatal testing (NIPT) by developing a methylation-sensitive quantitative PCR (MS-qPCR) assay for the detection of trisomies 13 and 18. By identifying and validating 22 differentially methylated sites with high trisomy/disomy ratios, we have established a highly specific and reproducible method that serves as a cost-effective and scalable alternative to current next-generation sequencing (NGS) approaches. This research paves the way for more accessible prenatal screening, particularly in resource-limited settings, and future work will focus on validating these findings in cell-free DNA from maternal plasma.</p>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <h3>Association Between First Trimester of Pregnancy Medication Use and Fetal DNA Fraction in Maternal Plasma</h3>
+                
+                <img src="./images/publication2_title.jpg" alt="Publication 2 Title" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Title page of the manuscript currently under review, highlighting the research team.</p>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-review">Under Review</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Journal:</strong> Journal of Ultrasound in Obstetrics and Gynecology</p>
+                    <p><strong>Abstract:</strong> This large-scale study, analyzing data from 43,722 pregnant women, investigates the impact of first-trimester medication use on fetal DNA fraction in maternal plasma. Our findings reveal a significant association between the administration of common medications, such as aspirin, enoxaparin, and levothyroxine, and a marked decrease in fetal fraction. These results have critical implications for the accuracy and reliability of non-invasive prenatal screening (NIPS), suggesting that pharmacological exposures should be carefully considered when interpreting test results. This research underscores the need for personalized NIPS protocols that account for maternal medication history.</p>
+                </div>
+            </div>
+            
+            <div class="publication">
+                <h3>Optimizing NIPT Scheduling and CellFree Fetal DNA Prediction via Machine Learning Models Based on Feto-Maternal Data</h3>
+                
+                <img src="./images/ml_roc_curve.jpg" alt="ROC Curve Comparison" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Receiver Operating Characteristic (ROC) curve comparison for various machine learning models, illustrating their diagnostic performance.</p>
+                <img src="./images/ml_boxplot.jpg" alt="Boxplot of Age Distribution" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Boxplot illustrating the distribution of maternal age in the dataset, crucial for understanding demographic influences on NIPT outcomes.</p>
+                <img src="./images/ml_barplot.jpg" alt="Barplot of Age Distribution" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Barplot showing the frequency distribution of maternal age, providing a visual summary of the dataset's age demographics.</p>
+                <img src="./images/ml_relationship_plot.jpg" alt="Relationship Plot" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Plot depicting the relationship between fetal fraction and a key clinical variable, highlighting factors influencing NIPT accuracy.</p>
+                
+                <div class="pub-meta">
+                    <span class="badge badge-progress">In Progress</span>
+                    <span class="badge badge-grant">Grant Funded</span>
+                </div>
+                
+                <div class="pub-details">
+                    <p><strong>Supervisor:</strong> Assoc. Prof. Kaveh Kavousi, Department of Bioinformatics, University of Tehran</p>
+                    <p><strong>Research Focus:</strong> This project focuses on developing and evaluating a range of machine learning models to predict optimal NIPT scheduling. We are exploring classical models such as logistic regression and support vector machines, with plans to advance to more complex ensemble methods and deep learning architectures as needed. The goal is to create a predictive tool that personalizes NIPT scheduling based on maternal clinical variables and fetal fraction dynamics, thereby enhancing the accuracy and efficiency of prenatal screening.</p>
+                    <p><strong>Data Sources:</strong> This research utilizes a comprehensive dataset of approximately 120,000 records from Genome-Nilou and Pars Genome Laboratories, providing a robust foundation for model development and validation.</p>
+                </div>
+            </div>
+
+            <div class="publication">
+                <h3>Biochemistry Laboratory: Modern Theory and Techniques (2nd Edition) - Persian Translation</h3>
+                <img src="./images/book_cover.jpg" alt="Book Cover" class="pub-image">
+                <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -15px;">Cover of the translated textbook, a significant contribution to making modern biochemical knowledge accessible to a Persian-speaking audience.</p>
+                <div class="pub-meta">
+                    <span class="badge badge-accepted">Published</span>
+                </div>
+                <div class="pub-details">
+                    <p><strong>Role:</strong> Lead Translator & Editor</p>
+                    <p>As a key member of the translation team, I spearheaded the Persian translation of this essential textbook, ensuring linguistic accuracy and scientific fidelity. This project underscores my commitment to fostering scientific literacy and knowledge dissemination.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Research Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Research Assistant - Modarressi Lab, TUMS</h3>
+                <p class="experience-date">February 2024 - Present</p>
+                <p><strong>Project:</strong> Differential Methylation Signatures in Maternal-Fetal Cell-Free DNA: A Novel Epigenetic Framework for Non-Invasive Prenatal Screening of Trisomy 13 and 18</p>
+                <p><strong>Supervisor:</strong> Prof. Mohammad Hossein Modarressi</p>
+                <p>Contributing to laboratory procedures focusing on DNA extraction and epigenetic marker identification. Hands-on experience in molecular genetics techniques.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>R&D Intern - Gene Dorpham Pars Company</h3>
+                <p class="experience-date">March 2025 - Present</p>
+                <p>Optimization of cfDNA extraction kit protocols. Working on advanced medical products for diagnostics and therapeutics. Affiliated with Genome-Nilou laboratory.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Technology Assistant - University of Tehran Science & Technology Park</h3>
+                <p class="experience-date">July 2025 - Present</p>
+                <p><strong>Supervisor:</strong> Dr. Masoumeh Malek</p>
+                <p>Engaged in the practical application of biotechnological principles within an industrial context, focusing on the translation of academic research into viable commercial products. This role involves bridging the gap between scientific innovation and market-ready solutions.</p>
+            </div>
+        </section>
+
+        <section id="teaching">
+            <h2>Teaching Experience</h2>
+            <div class="experience-item">
+                <h3>Teaching Assistant - University of Tehran</h3>
+                <ul>
+                    <p>As a Teaching Assistant for multiple courses, I provided comprehensive instructional support to undergraduate students. My responsibilities included leading weekly recitation sessions, facilitating hands-on experiments, grading assignments, and offering one-on-one tutoring to enhance student comprehension and academic performance across the following subjects:</p>
+                </ul>
+                    <li>Mathematics</li>
+                    <li>Structural Biochemistry</li>
+                    <li>Metabolism Biochemistry</li>
+                    <li>Basic Genetics</li>
+                    <li>Genetics Laboratory</li>
+                    <li>Molecular Genetics</li>
+                    <li>Biostatistics</li>
+                </ul>
+            </div>
+</section>
+        <section id="awards-and-honors">
+            <h2>Awards and Honors</h2>
+            <div class="experience-item">
+                <h3>Product-Oriented Artificial Intelligence Projects Research Grant</h3>
+                <p class="experience-date">Tehran University of Medical Sciences</p>
+                <p>Awarded for the project on personalizing NIPT scheduling through machine learning, recognizing its potential for significant clinical impact.</p>
+            </div>
+</section>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-section">
+                <div class="skill-category">
+                    <h3>Laboratory & Molecular Biology</h3>
+                    <ul class="skill-list">
+                        <li>PCR (Conventional & Real-Time)</li>
+                        <li>DNA Extraction</li>
+                        <li>Gel Electrophoresis</li>
+                        <li>NanoDrop Spectrophotometry</li>
+                        <li>Primer Design</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Computational & Bioinformatics</h3>
+                    <ul class="skill-list">
+                        <li>Python (Pandas, Scikit-learn)</li>
+                        <li>Machine Learning (Classical Models)</li>
+                        <li>Linux Command-Line</li>
+                        <li>Bioinformatics Analysis Tools</li>
+                        <li>NGS Data Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li>SPSS (Statistical Analysis)</li>
+                        <li>Microsoft Excel (Advanced)</li>
+                        <li>Data Visualization</li>
+                        <li>EndNote</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="download-cv">
+            <h2>Curriculum Vitae</h2>
+            <p style="margin-bottom: 20px;">Download my complete academic CV for detailed information about research, publications, and experience.</p>
+            <a href="./Artin_Mehrabani_CV.pdf" class="btn" download>Download CV (PDF)</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Artin Mehrabani</p>
+        <p>University of Tehran, Tehran, Iran</p>
+    </footer>
+</body>
+</html>
